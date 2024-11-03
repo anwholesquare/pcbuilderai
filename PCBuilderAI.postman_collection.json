@@ -1,0 +1,65 @@
+{
+	"info": {
+		"_postman_id": "10b56b9f-62b0-4cf6-8654-12049c47f6cf",
+		"name": "PCBuilderAI",
+		"description": "# PC Builder AI Chatbot\n\nA simple chatbot application designed to help users build custom PCs using OpenAI's assistant capabilities. This project utilizes Node.js and Express for the backend and HTML, CSS, and JavaScript for the frontend interface.\n\n## Features\n\n- **Interactive Chat Interface**: Engage in a natural conversation with the PC Builder AI chatbot, which provides suggestions for components based on user requirements.\n    \n- **Persistent Chat Sessions**: Chat sessions are saved and can be retrieved to continue where the conversation left off.\n    \n- **Message Animation and Styling**: Smooth animations and message styling for an engaging user experience.\n    \n- **Responsive Design**: The chat interface is designed to be responsive and accessible across devices.\n    \n\n## Technologies\n\n- **Node.js**: Backend server and API handling\n    \n- **Express**: Web framework for building RESTful services\n    \n- **OpenAI API**: Utilized for conversation processing\n    \n- **HTML, CSS, JavaScript**: Frontend interface with Bootstrap for responsive design\n    \n- **Cors**: To handle cross-origin requests\n    \n- **Bootstrap**: For styling and layout structure\n    \n- **Inter Font**: Modern font styling for better readability and visual appeal\n    \n\n## Getting Started\n\n### Prerequisites\n\n- **Node.js**: Make sure you have Node.js installed. You can download it [here](https://nodejs.org/).\n    \n- **OpenAI API Key**: Sign up and get an API key from [OpenAI](https://platform.openai.com/signup).\n    \n\n### Installation\n\n1. git clone https://github.com/yourusername/pc-builder-ai.git cd pc-builder-ai\n    \n2. npm install\n    \n3. OPENAI_API_KEY=your_openai_api_key ASSISTANT_ID=your_assistant_id PORT=3000\n    \n4. node app.js\n    \n    The server will run on `http://localhost:3000`.\n    \n\n### Usage\n\n1. Open a browser and go to `http://localhost:3000`.\n    \n2. Interact with the PC Builder AI chatbot by entering text into the chatbox. The chatbot will provide recommendations for custom PC builds.\n    \n3. To print or view chat history, use the \"Print\" button in the chat interface.\n    \n\n## Folder Structure\n\n``` plaintext\n.\n├── app.js               # Node.js/Express server file\n├── chat.html            # Chat interface HTML\n├── assets/              # Static assets like icons and images\n├── .env                 # Environment variables (do not commit this file!)\n└── README.md            # Project documentation\n\n ```\n\n## API Endpoints\n\n- **POST /chat**: Send a message to the assistant and receive a response.\n    \n- **POST /chathistory**: Retrieve chat history for a session.\n    \n\n## Troubleshooting\n\n- Ensure that your OpenAI API key and Assistant ID are correctly set in the `.env` file.\n    \n- If you encounter CORS issues, ensure that the `cors` module is configured correctly in `app.js`.\n    \n\n## License\n\nThis project is licensed under the MIT License.\n\n---",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "8123498"
+	},
+	"item": [
+		{
+			"name": "Chat",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"msg\": \"What's my previous msg?\", \"token\": \"f292c3aa-86d2-46bf-a162-6c810330c10e\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/chat",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"chat"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Chat History",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"token\": \"thread_OUZJ7bKAbcMua4GLLut07077\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/chathistory",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"chathistory"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
